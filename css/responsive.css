@@ -1,0 +1,213 @@
+/* ==========================================================================
+   INSURANCE ADDA - RESPONSIVE STYLES
+   Mobile, Tablet, and Desktop Breakpoints + Touch Targets
+   ========================================================================== */
+
+/* Large Tablets & Small Laptops (max-width: 1080px) */
+@media (max-width: 1080px) {
+  .nav-menu {
+    display: none;
+  }
+
+  .mobile-nav-toggle {
+    display: flex;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .why-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .testimonials-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-top-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+  }
+}
+
+/* Tablets (max-width: 860px) */
+@media (max-width: 860px) {
+  .section-padding {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .hero-cta-group {
+    justify-content: center;
+  }
+
+  .hero-portrait-container {
+    max-width: 360px;
+    margin: 0 auto;
+  }
+
+  .trust-strip {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    padding: 1.5rem;
+  }
+
+  .about-split-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .advisor-feature-box {
+    grid-template-columns: 1fr;
+  }
+
+  .advisor-feature-img {
+    min-height: 340px;
+    max-height: 420px;
+  }
+
+  .advisor-feature-content {
+    padding: 2.5rem 1.85rem;
+  }
+
+  .contact-layout-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .floating-stat-chip {
+    right: 5px;
+    top: 15px;
+    padding: 8px 14px;
+  }
+}
+
+/* Mobile Screens (max-width: 640px) */
+@media (max-width: 640px) {
+  .section-padding {
+    padding-top: 3.25rem;
+    padding-bottom: 3.25rem;
+  }
+
+  .site-header {
+    height: 72px;
+  }
+
+  .nav-container {
+    height: 72px;
+  }
+
+  .brand-logo-img {
+    height: 42px;
+  }
+
+  .brand-title {
+    font-size: 1.05rem;
+  }
+
+  .brand-tagline {
+    font-size: 0.65rem;
+  }
+
+  .services-grid,
+  .why-grid,
+  .testimonials-grid,
+  .values-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .footer-top-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .form-row-2 {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .enquiry-form-card {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 0.85rem 1.25rem;
+    font-size: 0.95rem;
+  }
+
+  .hero-cta-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-cta-group .btn {
+    width: 100%;
+  }
+
+  .advisor-contact-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .advisor-contact-actions .btn {
+    width: 100%;
+  }
+
+  .advisor-card-badge {
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    padding: 10px 14px;
+  }
+
+  .advisor-badge-info h4 {
+    font-size: 1.05rem;
+  }
+
+  .floating-whatsapp-widget {
+    bottom: 18px;
+    right: 18px;
+  }
+
+  .whatsapp-float-trigger {
+    width: 54px;
+    height: 54px;
+  }
+
+  .whatsapp-float-trigger svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  .whatsapp-popover {
+    width: calc(100vw - 36px);
+    right: -6px;
+    bottom: 68px;
+  }
+
+  .footer-bottom-bar {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .footer-bottom-links {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+}
