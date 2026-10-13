@@ -316,137 +316,314 @@
   </section>
 
   <!-- ==========================================================================
-       8. INSURANCE SERVICES (6 CORE CARDS)
+       8. INSURANCE SERVICES (3D SLIDING CAROUSEL - MATCHING REFERENCE DESIGN)
        ========================================================================== -->
-  <section class="section-padding bg-ivory" id="services">
+  <section class="section-padding services-slider-section" id="services">
     <div class="container">
       <div class="section-header">
-        <div class="eyebrow-badge">
+        <div class="eyebrow-badge badge-dark">
           COMPREHENSIVE COVERAGE SOLUTIONS
         </div>
-        <h2 class="section-title">Insurance Solutions for Every Stage of Life</h2>
-        <p class="section-subtitle">
-          Explore insurance options designed around the people, assets, journeys, and businesses that matter to you.
+        <h2 class="section-title text-white">Insurance Solutions for Every Stage of Life</h2>
+        <p class="text-muted-dark">
+          Explore insurance options designed around the people, assets, journeys, and businesses that matter to you. Click or swipe the cards to slide through our services.
         </p>
       </div>
 
-      <div class="services-grid">
-        <!-- Card 1: Life Insurance -->
-        <article class="service-card" id="card-life">
-          <div class="service-img-wrapper">
-            <img src="assets/images/service-life.jpg" alt="Life Insurance for family financial security" class="service-img" loading="lazy">
-            <span class="service-card-badge">Family Security</span>
-          </div>
-          <div class="service-content">
-            <h3 class="service-title">Life Insurance</h3>
-            <p class="service-description">
-              Explore life insurance options that can help support your family's financial future.
-            </p>
-            <button class="btn btn-whatsapp service-btn" 
-                    data-whatsapp-service="Life Insurance"
-                    aria-label="Enquire about Life Insurance">
-              Enquire About Life Insurance
-            </button>
-          </div>
-        </article>
+      <!-- 3D Perspective Cards Carousel -->
+      <div class="slider-perspective-viewport" id="servicesSliderViewport">
+        <div class="slider-cards-track" id="servicesSliderTrack">
 
-        <!-- Card 2: Term Insurance -->
-        <article class="service-card" id="card-term">
-          <div class="service-img-wrapper">
-            <img src="assets/images/service-term.jpg" alt="Term Insurance cover and policy planning" class="service-img" loading="lazy">
-            <span class="service-card-badge">Pure Protection</span>
-          </div>
-          <div class="service-content">
-            <h3 class="service-title">Term Insurance</h3>
-            <p class="service-description">
-              Understand term life cover, coverage amounts, policy duration, and other important considerations.
-            </p>
-            <button class="btn btn-whatsapp service-btn" 
-                    data-whatsapp-service="Term Insurance"
-                    aria-label="Explore Term Insurance">
-              Explore Term Insurance
-            </button>
-          </div>
-        </article>
+          <!-- Slide 1: Life Insurance (First & Active by Default) -->
+          <article class="slider-card-item is-active" data-slide-index="0" data-card-type="life" id="slide-life" tabindex="0" aria-label="Life Insurance">
+            <div class="slider-card-image-box">
+              <img src="assets/images/service-life.jpg" alt="Life Insurance for family financial security" class="slider-card-image" loading="lazy">
+              <span class="slider-card-badge">Family Security</span>
+            </div>
+            <div class="slider-card-body">
+              <div class="slider-card-title">
+                <span>Life Insurance</span>
+                <span style="font-size: 0.75rem; color: var(--color-gold); font-weight: 800;">TOP CHOICE</span>
+              </div>
+              <p class="slider-card-desc">
+                Explore life insurance options that can help support your family's financial future. Tap to view official plan posters!
+              </p>
 
-        <!-- Card 3: Health Insurance -->
-        <article class="service-card" id="card-health">
-          <div class="service-img-wrapper">
-            <img src="assets/images/service-health.jpg" alt="Health Insurance and medical care coverage" class="service-img" loading="lazy">
-            <span class="service-card-badge">Medical & Wellness</span>
-          </div>
-          <div class="service-content">
-            <h3 class="service-title">Health Insurance</h3>
-            <p class="service-description">
-              Explore health insurance options and understand coverage, waiting periods, exclusions, and policy benefits.
-            </p>
-            <button class="btn btn-whatsapp service-btn" 
-                    data-whatsapp-service="Health Insurance"
-                    aria-label="Enquire about Health Insurance">
-              Enquire About Health Insurance
-            </button>
-          </div>
-        </article>
+              <!-- Special Poster Indicator Pill (Triggers Posters Lightbox) -->
+              <div class="slider-poster-indicator-pill" data-open-plan-poster="ysr" role="button" tabindex="0">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                <span>✨ 3 Special Plan Posters Available</span>
+              </div>
 
-        <!-- Card 4: Vehicle Insurance -->
-        <article class="service-card" id="card-vehicle">
-          <div class="service-img-wrapper">
-            <img src="assets/images/service-vehicle.jpg" alt="Vehicle Insurance for car and bike" class="service-img" loading="lazy">
-            <span class="service-card-badge">Car & Two-Wheeler</span>
-          </div>
-          <div class="service-content">
-            <h3 class="service-title">Vehicle Insurance</h3>
-            <p class="service-description">
-              Get assistance exploring car and two-wheeler insurance, renewals, and available coverage options.
-            </p>
-            <button class="btn btn-whatsapp service-btn" 
-                    data-whatsapp-service="Vehicle Insurance"
-                    aria-label="Enquire about Vehicle Insurance">
-              Enquire About Vehicle Insurance
-            </button>
-          </div>
-        </article>
+              <!-- 3 Plan Quick Badges -->
+              <div class="slider-plan-badges-row">
+                <div class="slider-plan-chip" data-open-plan-poster="ysr" role="button" tabindex="0">
+                  Code: YSR
+                  <span>₹50/day &bull; ₹9.45L</span>
+                </div>
+                <div class="slider-plan-chip" data-open-plan-poster="cth" role="button" tabindex="0">
+                  Code: CTH
+                  <span>₹11/day &bull; ₹20L</span>
+                </div>
+                <div class="slider-plan-chip" data-open-plan-poster="yya" role="button" tabindex="0">
+                  Code: YYA
+                  <span>₹500/day &bull; ₹1.8Cr</span>
+                </div>
+              </div>
 
-        <!-- Card 5: Travel Insurance -->
-        <article class="service-card" id="card-travel">
-          <div class="service-img-wrapper">
-            <img src="assets/images/service-travel.jpg" alt="Travel Insurance for domestic and international trips" class="service-img" loading="lazy">
-            <span class="service-card-badge">Global Journey</span>
-          </div>
-          <div class="service-content">
-            <h3 class="service-title">Travel Insurance</h3>
-            <p class="service-description">
-              Explore travel insurance options for eligible medical emergencies, travel disruptions, and other covered risks.
-            </p>
-            <button class="btn btn-whatsapp service-btn" 
-                    data-whatsapp-service="Travel Insurance"
-                    aria-label="Explore Travel Insurance">
-              Explore Travel Insurance
-            </button>
-          </div>
-        </article>
+              <div style="display: flex; flex-direction: column; gap: 8px;">
+                <button class="btn btn-gold service-btn" data-open-plan-poster="ysr" aria-label="View Life Insurance Plan Posters">
+                  <svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                  View Plan Posters (3 Plans)
+                </button>
+                <button class="btn btn-whatsapp service-btn" data-whatsapp-service="Life Insurance" aria-label="Enquire about Life Insurance">
+                  Enquire on WhatsApp
+                </button>
+              </div>
+            </div>
+          </article>
 
-        <!-- Card 6: Shop & Business Insurance -->
-        <article class="service-card" id="card-business">
-          <div class="service-img-wrapper">
-            <img src="assets/images/service-business.jpg" alt="Shop and Commercial Business Insurance" class="service-img" loading="lazy">
-            <span class="service-card-badge">Commercial Enterprise</span>
-          </div>
-          <div class="service-content">
-            <h3 class="service-title">Shop & Business Insurance</h3>
-            <p class="service-description">
-              Explore insurance options for shops, commercial establishments, business assets, and eligible business risks.
-            </p>
-            <button class="btn btn-whatsapp service-btn" 
-                    data-whatsapp-service="Shop & Business Insurance"
-                    aria-label="Enquire about Business Insurance">
-              Enquire About Business Insurance
-            </button>
-          </div>
-        </article>
+          <!-- Slide 2: Term Insurance -->
+          <article class="slider-card-item is-next" data-slide-index="1" id="slide-term" tabindex="0" aria-label="Term Insurance">
+            <div class="slider-card-image-box">
+              <img src="assets/images/service-term.jpg" alt="Term Insurance cover and policy planning" class="slider-card-image" loading="lazy">
+              <span class="slider-card-badge">Pure Protection</span>
+            </div>
+            <div class="slider-card-body">
+              <div class="slider-card-title">
+                <span>Term Insurance</span>
+              </div>
+              <p class="slider-card-desc">
+                Understand term life cover, coverage amounts, policy duration, and other important considerations.
+              </p>
+              <div style="margin-top: auto;">
+                <button class="btn btn-whatsapp service-btn" data-whatsapp-service="Term Insurance" aria-label="Explore Term Insurance">
+                  Explore Term Insurance
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Slide 3: Health Insurance -->
+          <article class="slider-card-item is-far-next" data-slide-index="2" id="slide-health" tabindex="0" aria-label="Health Insurance">
+            <div class="slider-card-image-box">
+              <img src="assets/images/service-health.jpg" alt="Health Insurance and medical care coverage" class="slider-card-image" loading="lazy">
+              <span class="slider-card-badge">Medical & Wellness</span>
+            </div>
+            <div class="slider-card-body">
+              <div class="slider-card-title">
+                <span>Health Insurance</span>
+              </div>
+              <p class="slider-card-desc">
+                Explore health insurance options and understand coverage, waiting periods, exclusions, and policy benefits.
+              </p>
+              <div style="margin-top: auto;">
+                <button class="btn btn-whatsapp service-btn" data-whatsapp-service="Health Insurance" aria-label="Enquire about Health Insurance">
+                  Enquire About Health
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Slide 4: Vehicle Insurance -->
+          <article class="slider-card-item is-hidden" data-slide-index="3" id="slide-vehicle" tabindex="0" aria-label="Vehicle Insurance">
+            <div class="slider-card-image-box">
+              <img src="assets/images/service-vehicle.jpg" alt="Vehicle Insurance for car and bike" class="slider-card-image" loading="lazy">
+              <span class="slider-card-badge">Car & Two-Wheeler</span>
+            </div>
+            <div class="slider-card-body">
+              <div class="slider-card-title">
+                <span>Vehicle Insurance</span>
+              </div>
+              <p class="slider-card-desc">
+                Get assistance exploring car and two-wheeler insurance, renewals, and available coverage options.
+              </p>
+              <div style="margin-top: auto;">
+                <button class="btn btn-whatsapp service-btn" data-whatsapp-service="Vehicle Insurance" aria-label="Enquire about Vehicle Insurance">
+                  Enquire About Vehicle
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Slide 5: Travel Insurance -->
+          <article class="slider-card-item is-hidden" data-slide-index="4" id="slide-travel" tabindex="0" aria-label="Travel Insurance">
+            <div class="slider-card-image-box">
+              <img src="assets/images/service-travel.jpg" alt="Travel Insurance for domestic and international trips" class="slider-card-image" loading="lazy">
+              <span class="slider-card-badge">Global Journey</span>
+            </div>
+            <div class="slider-card-body">
+              <div class="slider-card-title">
+                <span>Travel Insurance</span>
+              </div>
+              <p class="slider-card-desc">
+                Explore travel insurance options for eligible medical emergencies, travel disruptions, and other covered risks.
+              </p>
+              <div style="margin-top: auto;">
+                <button class="btn btn-whatsapp service-btn" data-whatsapp-service="Travel Insurance" aria-label="Explore Travel Insurance">
+                  Explore Travel Insurance
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Slide 6: Shop & Business Insurance -->
+          <article class="slider-card-item is-far-prev" data-slide-index="5" id="slide-business" tabindex="0" aria-label="Shop & Business Insurance">
+            <div class="slider-card-image-box">
+              <img src="assets/images/service-business.jpg" alt="Shop and Commercial Business Insurance" class="slider-card-image" loading="lazy">
+              <span class="slider-card-badge">Commercial Enterprise</span>
+            </div>
+            <div class="slider-card-body">
+              <div class="slider-card-title">
+                <span>Shop & Business Insurance</span>
+              </div>
+              <p class="slider-card-desc">
+                Explore insurance options for shops, commercial establishments, business assets, and eligible business risks.
+              </p>
+              <div style="margin-top: auto;">
+                <button class="btn btn-whatsapp service-btn" data-whatsapp-service="Shop & Business Insurance" aria-label="Enquire about Business Insurance">
+                  Enquire About Business
+                </button>
+              </div>
+            </div>
+          </article>
+
+        </div>
       </div>
+
+      <!-- Slider Navigation Controls (Arrows & Pagination Dots) -->
+      <div class="slider-navigation-bar">
+        <button class="slider-nav-btn" id="sliderPrevBtn" aria-label="Previous service slide">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        </button>
+
+        <div class="slider-dots-group" id="sliderDotsGroup" role="tablist">
+          <button class="slider-dot is-active" data-dot-index="0" aria-label="Slide 1: Life Insurance" role="tab"></button>
+          <button class="slider-dot" data-dot-index="1" aria-label="Slide 2: Term Insurance" role="tab"></button>
+          <button class="slider-dot" data-dot-index="2" aria-label="Slide 3: Health Insurance" role="tab"></button>
+          <button class="slider-dot" data-dot-index="3" aria-label="Slide 4: Vehicle Insurance" role="tab"></button>
+          <button class="slider-dot" data-dot-index="4" aria-label="Slide 5: Travel Insurance" role="tab"></button>
+          <button class="slider-dot" data-dot-index="5" aria-label="Slide 6: Shop & Business Insurance" role="tab"></button>
+        </div>
+
+        <button class="slider-nav-btn" id="sliderNextBtn" aria-label="Next service slide">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
+      </div>
+
+      <div class="slider-status-label" id="sliderStatusLabel">
+        Slide 1 of 6 &bull; Life Insurance (Active) &bull; Swipe or click to slide
+      </div>
+
     </div>
   </section>
+
+  <!-- ==========================================================================
+       DEDICATED LIFE INSURANCE PLAN POSTERS MODAL & LIGHTBOX
+       ========================================================================== -->
+  <div class="modal-backdrop" id="lifePlanPosterModal" role="dialog" aria-modal="true" aria-labelledby="posterModalTitle">
+    <div class="poster-modal-dialog">
+      <button class="modal-close-btn" data-close-modal aria-label="Close dialog">&times;</button>
+      
+      <div class="poster-modal-header">
+        <div>
+          <h3 id="posterModalTitle">Official Life Insurance Plan Highlights</h3>
+          <p>Advisor: Ravi Kumar G.R. &bull; 15 Years Experience &bull; 500+ Families Secured</p>
+        </div>
+      </div>
+
+      <!-- Plan Switcher Tabs -->
+      <div class="poster-modal-tabs" role="tablist">
+        <button class="poster-tab-btn is-active" data-poster-tab="ysr" role="tab" id="tabPlanYSR">
+          Plan Code: YSR
+          <span>₹50/Day &bull; ₹9,45,000 Maturity</span>
+        </button>
+        <button class="poster-tab-btn" data-poster-tab="cth" role="tab" id="tabPlanCTH">
+          Plan Code: CTH
+          <span>₹11/Day &bull; ₹20,00,000 Cover</span>
+        </button>
+        <button class="poster-tab-btn" data-poster-tab="yya" role="tab" id="tabPlanYYA">
+          Plan Code: YYA
+          <span>₹500/Day &bull; ₹1.80 Crore Total</span>
+        </button>
+      </div>
+
+      <!-- Poster Tab Panels -->
+      <div class="poster-modal-body">
+        
+        <!-- Left: Full Poster Image Display -->
+        <div class="poster-visual-wrapper" id="posterVisualContainer" title="Click to view full image">
+          <img src="assets/images/poster-plan-ysr.jpg" 
+               alt="Official Life Insurance Plan Poster" 
+               class="poster-visual-img" 
+               id="activePosterImage">
+          <div class="poster-zoom-pill">
+            <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2;"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+            Official Plan Poster
+          </div>
+        </div>
+
+        <!-- Right: Plan Details & Direct Action -->
+        <div class="poster-details-content" id="posterDetailsContent">
+          
+          <div class="poster-plan-badge" id="posterBadgeLabel">
+            <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span id="posterCodeText">PLAN CODE: YSR</span>
+          </div>
+
+          <h4 id="posterHeadline">
+            ಇಂದಿನ ಸಣ್ಣ ಹೂಡಿಕೆ... ನಾಳೆಯ ದೊಡ್ಡ ಭದ್ರತೆ!
+          </h4>
+
+          <p id="posterSubline" style="font-size:0.95rem;color:var(--color-text-muted);line-height:1.6;">
+            Small daily savings of just ₹50 per day designed for solid family future security, children's education, or milestone savings.
+          </p>
+
+          <div class="poster-highlight-matrix" id="posterMatrix">
+            <div class="matrix-cell">
+              <span>Daily Savings</span>
+              <strong id="matrixDaily">₹50 / Day</strong>
+            </div>
+            <div class="matrix-cell">
+              <span>Maturity Benefit</span>
+              <strong id="matrixMaturity">₹9,45,000</strong>
+            </div>
+            <div class="matrix-cell">
+              <span>Insurance Protection</span>
+              <strong id="matrixProtection">₹3,60,000</strong>
+            </div>
+            <div class="matrix-cell">
+              <span>Tax Benefit</span>
+              <strong id="matrixTax">Section 80C</strong>
+            </div>
+          </div>
+
+          <div class="poster-actions-row">
+            <a href="https://wa.me/919844411511?text=Hello%20Ravi%20Kumar%20G.R.%2C%20I%20am%20interested%20in%20Life%20Insurance%20Plan%20Code%3A%20YSR%20(%E2%82%B950%2Fday%2C%20%E2%82%B99.45%20Lakh%20Maturity).%20Please%20share%20details." 
+               target="_blank" 
+               rel="noopener"
+               class="btn btn-whatsapp" 
+               id="posterWhatsAppBtn">
+              <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:currentColor;"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+              Enquire This Plan on WhatsApp
+            </a>
+
+            <div style="display:flex;gap:10px;">
+              <a href="tel:9844411511" class="btn btn-outline-navy" style="flex:1;font-size:0.88rem;">
+                Call: 9844411511
+              </a>
+              <a href="tel:9845676455" class="btn btn-outline-navy" style="flex:1;font-size:0.88rem;">
+                Call: 9845676455
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
 
   <!-- ==========================================================================
        9. WHY CHOOSE INSURANCE ADDA (DARK NAVY SECTION)
