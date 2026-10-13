@@ -273,7 +273,7 @@ function initServicesSlider() {
         updateSlider(idx);
       } else if (card.getAttribute('data-card-type') === 'life') {
         // "if i touch life incurence this poster shold be shown"
-        openPlanPoster('ysr');
+        openPlanPoster('yaw');
       }
     });
   });
@@ -318,10 +318,46 @@ function initServicesSlider() {
 /**
  * ==========================================================================
  * 7. DEDICATED LIFE INSURANCE PLAN POSTERS MODAL & LIGHTBOX
- * Displays official posters for Plan YSR, Plan CTH, Plan YYA with WhatsApp CTAs
+ * Displays official posters for Plan YAW, Plan YSS, Plan CTH, Plan YSR, Plan YYA
  * ==========================================================================
  */
 const PLAN_POSTERS = {
+  yaw: {
+    code: 'YAW',
+    posterImg: 'assets/images/poster-plan-yaw.jpg',
+    badge: 'PLAN CODE: YAW',
+    headline: 'Protection & High Maturity Savings Plan',
+    subline: 'Save just ₹43 per day to secure a guaranteed ₹14,32,500 maturity corpus with up to ₹8,00,000 life coverage for your family.',
+    daily: '₹43 / Day',
+    maturity: '₹14,32,500',
+    protection: '₹4L / ₹8L Cover',
+    tax: 'Sec 80C & 10(10D)',
+    waText: 'Hello Ravi Kumar G.R., I am interested in Life Insurance Plan Code: YAW (₹43/day, ₹14,32,500 Maturity). Please share details.'
+  },
+  yss: {
+    code: 'YSS (Kanyadan)',
+    posterImg: 'assets/images/poster-plan-yss.jpg',
+    badge: 'PLAN CODE: YSS (KANYADAN)',
+    headline: 'Kanyadan Plan — Secure Your Daughter\'s Future & Dreams',
+    subline: 'A dedicated savings plan for your daughter\'s higher education and marriage. Save ₹118 per day for a massive ₹26,50,000 maturity benefit.',
+    daily: '₹118 / Day',
+    maturity: '₹26,50,000',
+    protection: '₹10L / ₹20L Cover',
+    tax: 'Sec 80C & 10(10D)',
+    waText: 'Hello Ravi Kumar G.R., I am interested in Life Insurance Kanyadan Plan Code: YSS (₹118/day, ₹26,50,000 Maturity). Please share details.'
+  },
+  cth: {
+    code: 'CTH (Family Shield)',
+    posterImg: 'assets/images/poster-plan-cth-en.jpg',
+    badge: 'PLAN CODE: CTH (FAMILY SHIELD)',
+    headline: 'Family Protection Shield Plan — Complete Security',
+    subline: 'Comprehensive family protection shield starting at just ₹10 per day with up to ₹20,00,000 combined life and accidental cover.',
+    daily: '₹10 / Day',
+    maturity: 'Shield Cover',
+    protection: '₹5L / ₹20L Cover',
+    tax: 'Section 80C',
+    waText: 'Hello Ravi Kumar G.R., I am interested in Life Insurance Plan Code: CTH (₹10/day, ₹20 Lakh Cover). Please share details.'
+  },
   ysr: {
     code: 'YSR',
     posterImg: 'assets/images/poster-plan-ysr.jpg',
@@ -334,28 +370,16 @@ const PLAN_POSTERS = {
     tax: 'Section 80C',
     waText: 'Hello Ravi Kumar G.R., I am interested in Life Insurance Plan Code: YSR (₹50/day, ₹9.45 Lakh Maturity). Please share details.'
   },
-  cth: {
-    code: 'CTH',
-    posterImg: 'assets/images/poster-plan-cth.jpg',
-    badge: 'PLAN CODE: CTH',
-    headline: 'ಇಂದಿನ ಚಿಕ್ಕ ಹೆಜ್ಜೆ... ನಾಳೆಯ ದೊಡ್ಡ ರಕ್ಷಣೆ!',
-    subline: 'Comprehensive family protection plan starting at just ₹11 per day with high normal life cover and accident cover.',
-    daily: '₹11 / Day',
-    maturity: 'Pure Protection',
-    protection: '₹5L / ₹20L Cover',
-    tax: 'Section 80C',
-    waText: 'Hello Ravi Kumar G.R., I am interested in Life Insurance Plan Code: CTH (₹11/day, ₹20 Lakh Cover). Please share details.'
-  },
   yya: {
-    code: 'YYA',
+    code: 'YYA (Wealth)',
     posterImg: 'assets/images/poster-plan-yya.jpg',
-    badge: 'PLAN CODE: YYA',
+    badge: 'PLAN CODE: YYA (LIFETIME WEALTH)',
     headline: 'A Celebration of Today... A Secure Tomorrow!',
-    subline: 'Lifetime financial security and regular income of ₹2,60,000 every year from age 46 to 100 with massive total benefit.',
+    subline: 'Lifetime financial security and regular annual payout of ₹2,60,000 every year from age 46 to 100 with ₹1.80 Crore total benefit.',
     daily: '₹500 / Day',
     maturity: '₹40,56,000',
     protection: '₹1,80,96,000 Benefit',
-    tax: 'Section 80C / Tax Free',
+    tax: 'Sec 80C / Tax Free',
     waText: 'Hello Ravi Kumar G.R., I am interested in Life Insurance Plan Code: YYA (₹500/day, ₹1.8 Crore Benefit). Please share details.'
   }
 };
@@ -364,13 +388,13 @@ function openPlanPoster(planKey) {
   const modal = document.getElementById('lifePlanPosterModal');
   if (!modal) return;
 
-  switchPlanTab(planKey || 'ysr');
+  switchPlanTab(planKey || 'yaw');
   modal.classList.add('open');
   document.body.style.overflow = 'hidden';
 }
 
 function switchPlanTab(planKey) {
-  const data = PLAN_POSTERS[planKey] || PLAN_POSTERS.ysr;
+  const data = PLAN_POSTERS[planKey] || PLAN_POSTERS.yaw;
 
   // Update tabs active state
   const tabButtons = document.querySelectorAll('.poster-tab-btn');
@@ -422,7 +446,7 @@ function initPlanPosterModal() {
     const trigger = e.target.closest('[data-open-plan-poster]');
     if (trigger) {
       e.preventDefault();
-      const planKey = trigger.getAttribute('data-open-plan-poster') || 'ysr';
+      const planKey = trigger.getAttribute('data-open-plan-poster') || 'yaw';
       openPlanPoster(planKey);
     }
   });

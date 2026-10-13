@@ -350,31 +350,39 @@
               </p>
 
               <!-- Special Poster Indicator Pill (Triggers Posters Lightbox) -->
-              <div class="slider-poster-indicator-pill" data-open-plan-poster="ysr" role="button" tabindex="0">
+              <div class="slider-poster-indicator-pill" data-open-plan-poster="yaw" role="button" tabindex="0">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-                <span>✨ 3 Special Plan Posters Available</span>
+                <span>✨ 5 Official Life Insurance Plan Posters Available</span>
               </div>
 
-              <!-- 3 Plan Quick Badges -->
+              <!-- 5 Plan Quick Badges -->
               <div class="slider-plan-badges-row">
+                <div class="slider-plan-chip" data-open-plan-poster="yaw" role="button" tabindex="0">
+                  Code: YAW
+                  <span>₹43/day &bull; ₹14.32L</span>
+                </div>
+                <div class="slider-plan-chip" data-open-plan-poster="yss" role="button" tabindex="0">
+                  Code: YSS (Kanyadan)
+                  <span>₹118/day &bull; ₹26.5L</span>
+                </div>
+                <div class="slider-plan-chip" data-open-plan-poster="cth" role="button" tabindex="0">
+                  Code: CTH (Shield)
+                  <span>₹10/day &bull; ₹20L</span>
+                </div>
                 <div class="slider-plan-chip" data-open-plan-poster="ysr" role="button" tabindex="0">
                   Code: YSR
                   <span>₹50/day &bull; ₹9.45L</span>
                 </div>
-                <div class="slider-plan-chip" data-open-plan-poster="cth" role="button" tabindex="0">
-                  Code: CTH
-                  <span>₹11/day &bull; ₹20L</span>
-                </div>
                 <div class="slider-plan-chip" data-open-plan-poster="yya" role="button" tabindex="0">
-                  Code: YYA
+                  Code: YYA (Wealth)
                   <span>₹500/day &bull; ₹1.8Cr</span>
                 </div>
               </div>
 
               <div style="display: flex; flex-direction: column; gap: 8px;">
-                <button class="btn btn-gold service-btn" data-open-plan-poster="ysr" aria-label="View Life Insurance Plan Posters">
+                <button class="btn btn-gold service-btn" data-open-plan-poster="yaw" aria-label="View Life Insurance Plan Posters">
                   <svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                  View Plan Posters (3 Plans)
+                  View Plan Posters (5 Official Plans)
                 </button>
                 <button class="btn btn-whatsapp service-btn" data-whatsapp-service="Life Insurance" aria-label="Enquire about Life Insurance">
                   Enquire on WhatsApp
@@ -534,16 +542,24 @@
 
       <!-- Plan Switcher Tabs -->
       <div class="poster-modal-tabs" role="tablist">
-        <button class="poster-tab-btn is-active" data-poster-tab="ysr" role="tab" id="tabPlanYSR">
+        <button class="poster-tab-btn is-active" data-poster-tab="yaw" role="tab" id="tabPlanYAW">
+          Plan Code: YAW
+          <span>₹43/Day &bull; ₹14,32,500 Maturity</span>
+        </button>
+        <button class="poster-tab-btn" data-poster-tab="yss" role="tab" id="tabPlanYSS">
+          Plan Code: YSS (Kanyadan)
+          <span>₹118/Day &bull; ₹26,50,000 Maturity</span>
+        </button>
+        <button class="poster-tab-btn" data-poster-tab="cth" role="tab" id="tabPlanCTH">
+          Plan Code: CTH (Shield)
+          <span>₹10/Day &bull; ₹20,00,000 Cover</span>
+        </button>
+        <button class="poster-tab-btn" data-poster-tab="ysr" role="tab" id="tabPlanYSR">
           Plan Code: YSR
           <span>₹50/Day &bull; ₹9,45,000 Maturity</span>
         </button>
-        <button class="poster-tab-btn" data-poster-tab="cth" role="tab" id="tabPlanCTH">
-          Plan Code: CTH
-          <span>₹11/Day &bull; ₹20,00,000 Cover</span>
-        </button>
         <button class="poster-tab-btn" data-poster-tab="yya" role="tab" id="tabPlanYYA">
-          Plan Code: YYA
+          Plan Code: YYA (Wealth)
           <span>₹500/Day &bull; ₹1.80 Crore Total</span>
         </button>
       </div>
@@ -553,7 +569,7 @@
         
         <!-- Left: Full Poster Image Display -->
         <div class="poster-visual-wrapper" id="posterVisualContainer" title="Click to view full image">
-          <img src="assets/images/poster-plan-ysr.jpg" 
+          <img src="assets/images/poster-plan-yaw.jpg" 
                alt="Official Life Insurance Plan Poster" 
                class="poster-visual-img" 
                id="activePosterImage">
@@ -568,38 +584,38 @@
           
           <div class="poster-plan-badge" id="posterBadgeLabel">
             <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            <span id="posterCodeText">PLAN CODE: YSR</span>
+            <span id="posterCodeText">PLAN CODE: YAW</span>
           </div>
 
           <h4 id="posterHeadline">
-            ಇಂದಿನ ಸಣ್ಣ ಹೂಡಿಕೆ... ನಾಳೆಯ ದೊಡ್ಡ ಭದ್ರತೆ!
+            Protection & High Maturity Savings Plan
           </h4>
 
           <p id="posterSubline" style="font-size:0.95rem;color:var(--color-text-muted);line-height:1.6;">
-            Small daily savings of just ₹50 per day designed for solid family future security, children's education, or milestone savings.
+            Save just ₹43 per day to secure a guaranteed ₹14,32,500 maturity corpus with up to ₹8,00,000 life coverage for your family.
           </p>
 
           <div class="poster-highlight-matrix" id="posterMatrix">
             <div class="matrix-cell">
               <span>Daily Savings</span>
-              <strong id="matrixDaily">₹50 / Day</strong>
+              <strong id="matrixDaily">₹43 / Day</strong>
             </div>
             <div class="matrix-cell">
               <span>Maturity Benefit</span>
-              <strong id="matrixMaturity">₹9,45,000</strong>
+              <strong id="matrixMaturity">₹14,32,500</strong>
             </div>
             <div class="matrix-cell">
               <span>Insurance Protection</span>
-              <strong id="matrixProtection">₹3,60,000</strong>
+              <strong id="matrixProtection">₹4L / ₹8L Cover</strong>
             </div>
             <div class="matrix-cell">
               <span>Tax Benefit</span>
-              <strong id="matrixTax">Section 80C</strong>
+              <strong id="matrixTax">Sec 80C & 10(10D)</strong>
             </div>
           </div>
 
           <div class="poster-actions-row">
-            <a href="https://wa.me/919844411511?text=Hello%20Ravi%20Kumar%20G.R.%2C%20I%20am%20interested%20in%20Life%20Insurance%20Plan%20Code%3A%20YSR%20(%E2%82%B950%2Fday%2C%20%E2%82%B99.45%20Lakh%20Maturity).%20Please%20share%20details." 
+            <a href="https://wa.me/919844411511?text=Hello%20Ravi%20Kumar%20G.R.%2C%20I%20am%20interested%20in%20Life%20Insurance%20Plan%20Code%3A%20YAW%20(%E2%82%B943%2Fday%2C%20%E2%82%B914%2C32%2C500%20Maturity).%20Please%20share%20details." 
                target="_blank" 
                rel="noopener"
                class="btn btn-whatsapp" 
