@@ -263,17 +263,25 @@ function initServicesSlider() {
   // Card click interaction
   cards.forEach((card, idx) => {
     card.addEventListener('click', (e) => {
-      // If clicking button/link inside, let standard action run
-      if (e.target.closest('button, a, .slider-poster-indicator-pill, .slider-plan-chip')) {
+      // If clicking WhatsApp enquiry button, let standard action run
+      if (e.target.closest('a, [data-whatsapp-service]')) {
+        return;
+      }
+
+      const isLifeCard = card.getAttribute('data-card-type') === 'life';
+
+      if (isLifeCard) {
+        // "if they click on life inceunce it should go to poster"
+        if (idx !== activeIndex) {
+          updateSlider(idx);
+        }
+        openPlanPoster('yaw');
         return;
       }
 
       if (idx !== activeIndex) {
         // Slide non-active card to center
         updateSlider(idx);
-      } else if (card.getAttribute('data-card-type') === 'life') {
-        // "if i touch life incurence this poster shold be shown"
-        openPlanPoster('yaw');
       }
     });
   });

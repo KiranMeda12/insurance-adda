@@ -559,6 +559,103 @@
   gap: 1rem;
 }
 
+/* Advisor Why Choose Box */
+.advisor-why-box {
+  background: rgba(255, 255, 255, 0.04);
+  border-left: 3px solid var(--color-gold);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.5rem;
+  margin: 1.25rem 0;
+}
+
+.advisor-why-title {
+  color: #FFFFFF;
+  font-size: 1.05rem;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.advisor-why-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.advisor-why-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: #E2E8F0;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.advisor-why-list svg {
+  width: 16px;
+  height: 16px;
+  fill: var(--color-gold);
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+/* Advisor Mission Box */
+.advisor-mission-box {
+  background: rgba(200, 164, 93, 0.1);
+  border: 1px solid rgba(200, 164, 93, 0.35);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.advisor-mission-label {
+  display: block;
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-gold-light);
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.advisor-mission-text {
+  margin: 0;
+  color: #FFFFFF;
+  font-style: italic;
+  font-size: 0.98rem;
+  line-height: 1.55;
+  font-family: var(--font-serif);
+}
+
+/* Advisor Brand Strip */
+.advisor-brand-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1.25rem 0;
+  margin-bottom: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.advisor-brand-title {
+  color: #FFFFFF;
+  font-weight: 800;
+  font-size: 1.1rem;
+  letter-spacing: 0.04em;
+}
+
+.advisor-brand-motto {
+  color: var(--color-gold);
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
 /* ==========================================================================
    5. INSURANCE SERVICES CARDS GRID
    ========================================================================== */
@@ -716,6 +813,14 @@
   border-color: var(--color-gold);
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.65), 0 0 30px rgba(200, 164, 93, 0.35);
   cursor: default;
+}
+
+#slide-life.is-active {
+  cursor: pointer;
+}
+
+#slide-life.is-active:hover {
+  box-shadow: 0 28px 65px rgba(0, 0, 0, 0.7), 0 0 35px rgba(200, 164, 93, 0.5);
 }
 
 /* Left & Right Adjacent Cards */
