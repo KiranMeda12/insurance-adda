@@ -17,9 +17,9 @@
   <link rel="icon" type="image/jpeg" href="assets/images/insurance-adda-logo.jpg">
 
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/components.css">
-  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/style.css?v=2.7">
+  <link rel="stylesheet" href="css/components.css?v=2.7">
+  <link rel="stylesheet" href="css/responsive.css?v=2.7">
 </head>
 <body>
 
@@ -127,7 +127,7 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
             </div>
             <div>
-              <div class="trust-number">15+</div>
+              <div class="trust-number"><span class="counter-number" data-target="15" data-start="1">1</span>+</div>
               <div class="trust-label">Years of Experience</div>
             </div>
           </div>
@@ -137,7 +137,7 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
             </div>
             <div>
-              <div class="trust-number">500+</div>
+              <div class="trust-number"><span class="counter-number" data-target="500" data-start="0">0</span>+</div>
               <div class="trust-label">Families Secured</div>
             </div>
           </div>
@@ -169,7 +169,7 @@
                 <p>Trusted Insurance Advisor | INSURANCE ADDA</p>
               </div>
               <div class="advisor-badge-tag">
-                15 Yrs Exp
+                <span class="counter-number" data-target="15" data-start="1">1</span> Yrs Exp
               </div>
             </div>
           </div>
@@ -180,8 +180,8 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             </div>
             <div class="chip-text">
-              <strong>500+</strong>
-              <span>Families Secured</span>
+              <strong><span class="counter-number" data-target="500" data-start="0">0</span>+</strong>
+              <span>Families<br>Secured</span>
             </div>
           </div>
         </div>
@@ -330,11 +330,11 @@
             </div>
             <div style="display: flex; gap: 1.75rem;">
               <div>
-                <strong style="display: block; font-family: var(--font-serif); font-size: 1.4rem; color: var(--color-gold-light);">15 Years</strong>
+                <strong style="display: block; font-family: var(--font-serif); font-size: 1.4rem; color: var(--color-gold-light);"><span class="counter-number" data-target="15" data-start="1">1</span> Years</strong>
                 <span style="font-size: 0.72rem; color: #A0B2C9; text-transform: uppercase;">Experience</span>
               </div>
               <div>
-                <strong style="display: block; font-family: var(--font-serif); font-size: 1.4rem; color: var(--color-gold-light);">500+</strong>
+                <strong style="display: block; font-family: var(--font-serif); font-size: 1.4rem; color: var(--color-gold-light);"><span class="counter-number" data-target="500" data-start="0">0</span>+</strong>
                 <span style="font-size: 0.72rem; color: #A0B2C9; text-transform: uppercase;">Families Secured</span>
               </div>
             </div>
@@ -1189,8 +1189,60 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="js/main.js"></script>
-  <script src="js/whatsapp.js"></script>
-  <script src="js/enquiry.js"></script>
+  <script src="js/main.js?v=2.7"></script>
+  <script src="js/whatsapp.js?v=2.7"></script>
+  <script src="js/enquiry.js?v=2.7"></script>
+  <script>
+    // Fast Animated Counters Runner (Guaranteed to execute on local test)
+    (function() {
+      function startAnimatedCounters() {
+        var counters = document.querySelectorAll('.counter-number');
+        if (!counters.length) return;
+        
+        counters.forEach(function(el) {
+          var target = parseInt(el.getAttribute('data-target'), 10) || 0;
+          var start = parseInt(el.getAttribute('data-start'), 10) || 0;
+          var duration = target > 50 ? 950 : 650;
+          var startTime = null;
+          el.textContent = start;
+
+          function animateStep(timestamp) {
+            if (!startTime) startTime = timestamp;
+            var elapsed = timestamp - startTime;
+            var progress = Math.min(elapsed / duration, 1);
+            var ease = 1 - Math.pow(1 - progress, 2.5);
+            var currentVal = Math.floor(start + (target - start) * ease);
+            
+            el.textContent = currentVal;
+            
+            if (progress < 1) {
+              window.requestAnimationFrame(animateStep);
+            } else {
+              el.textContent = target;
+            }
+          }
+
+          window.requestAnimationFrame(animateStep);
+        });
+      }
+
+      // Run on page load with slight 180ms delay so user catches the start from 0!
+      window.addEventListener('load', function() {
+        setTimeout(startAnimatedCounters, 180);
+      });
+      document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(startAnimatedCounters, 200);
+      });
+      // Safety fallback immediate trigger
+      setTimeout(startAnimatedCounters, 300);
+
+      // Re-trigger if user clicks or taps on any stat chip / trust item
+      document.addEventListener('click', function(e) {
+        if (e.target.closest('.floating-stat-chip, .trust-item, .advisor-card-badge, .advisor-brand-strip')) {
+          startAnimatedCounters();
+        }
+      });
+    })();
+  </script>
 </body>
 </html>

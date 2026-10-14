@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollAnimations();
   initServicesSlider();
   initPlanPosterModal();
+  initFastAnimatedCounters();
 });
 
 /**
@@ -269,19 +270,29 @@ function initServicesSlider() {
       }
 
       const isLifeCard = card.getAttribute('data-card-type') === 'life';
-
-      if (isLifeCard) {
-        // "if they click on life inceunce it should go to poster"
-        if (idx !== activeIndex) {
-          updateSlider(idx);
-        }
-        openPlanPoster('yaw');
-        return;
-      }
+      const isHealthCard = card.id === 'slide-health';
 
       if (idx !== activeIndex) {
         // Slide non-active card to center
         updateSlider(idx);
+        return;
+      }
+
+      // If active card is clicked:
+      if (isLifeCard) {
+        openPlanPoster('yaw');
+        return;
+      }
+
+      if (isHealthCard) {
+        const assistModal = document.getElementById('assistanceModal');
+        const serviceSelect = document.getElementById('modalInsuranceService');
+        if (serviceSelect) serviceSelect.value = 'Health Insurance';
+        if (assistModal) {
+          assistModal.classList.add('open');
+          document.body.style.overflow = 'hidden';
+        }
+        return;
       }
     });
   });
@@ -458,4 +469,61 @@ function initPlanPosterModal() {
       openPlanPoster(planKey);
     }
   });
+}
+
+/**
+ * ==========================================================================
+ * 8. FAST ANIMATED NUMBER COUNTERS (0 to 500, 1 to 15)
+ * Rapid count-up effect on page load and scroll into view
+ * ==========================================================================
+ */
+function initFastAnimatedCounters() {
+  const counters = document.querySelectorAll('.counter-number');
+  if (!counters.length) return;
+
+  function animate(el) {
+    const target = parseInt(el.getAttribute('data-target'), 10) || 0;
+    const start = parseInt(el.getAttribute('data-start'), 10) || 0;
+    // Visually rich fast count-up (950ms for 500, 650ms for 15)
+    const duration = target > 50 ? 950 : 650;
+    const startTime = performance.now();
+    el.textContent = start;
+
+    function update(now) {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      // Fast quadratic/cubic ease-out curve
+      const ease = 1 - Math.pow(1 - progress, 2.5);
+      const val = Math.floor(start + (target - start) * ease);
+
+      el.textContent = val;
+
+      if (progress < 1) {
+        requestAnimationFrame(update);
+      } else {
+        el.textContent = target;
+      }
+    }
+
+    requestAnimationFrame(update);
+  }
+
+  // Trigger after short delay so the user visibly watches it roll up from 0
+  setTimeout(() => {
+    counters.forEach(c => animate(c));
+  }, 180);
+
+  // Observer for counters scrolled into view later
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animate(entry.target);
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    counters.forEach(c => observer.observe(c));
+  }
 }
