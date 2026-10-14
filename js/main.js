@@ -415,15 +415,24 @@ function openPlanPoster(planKey) {
 function switchPlanTab(planKey) {
   const data = PLAN_POSTERS[planKey] || PLAN_POSTERS.yaw;
 
-  // Update tabs active state
+  // Update tabs active state & ensure active tab is horizontally visible
   const tabButtons = document.querySelectorAll('.poster-tab-btn');
   tabButtons.forEach(btn => {
     if (btn.getAttribute('data-poster-tab') === planKey) {
       btn.classList.add('is-active');
+      try {
+        btn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      } catch (err) {}
     } else {
       btn.classList.remove('is-active');
     }
   });
+
+  // Always reset modal body scroll to top so the poster is immediately visible first
+  const modalBody = document.querySelector('.poster-modal-body');
+  if (modalBody) {
+    modalBody.scrollTop = 0;
+  }
 
   // Update DOM elements
   const activeImage = document.getElementById('activePosterImage');
