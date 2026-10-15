@@ -536,3 +536,48 @@ function initFastAnimatedCounters() {
     counters.forEach(c => observer.observe(c));
   }
 }
+
+/**
+ * 9. Testimonial Poster Lightbox Viewer
+ */
+function openTestimonialLightbox(imgSrc, captionText) {
+  let modal = document.getElementById('testimonialLightboxModal');
+  if (!modal) {
+    modal = document.createElement('div');
+    modal.className = 'modal-backdrop';
+    modal.id = 'testimonialLightboxModal';
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
+    modal.innerHTML = `
+      <div class="testimonial-lightbox-dialog">
+        <button class="modal-close-btn" data-close-modal aria-label="Close dialog">&times;</button>
+        <div class="testimonial-lightbox-img-wrap">
+          <img src="${imgSrc}" alt="Customer Testimonial Poster" id="testimonialLightboxImg" class="testimonial-lightbox-img">
+        </div>
+        <div class="testimonial-lightbox-caption" id="testimonialLightboxCaption">${captionText || 'Customer Testimonial | INSURANCE ADDA'}</div>
+      </div>
+    `;
+    document.body.appendChild(modal);
+
+    modal.querySelector('.modal-close-btn').addEventListener('click', () => {
+      modal.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    });
+  } else {
+    const img = document.getElementById('testimonialLightboxImg');
+    const caption = document.getElementById('testimonialLightboxCaption');
+    if (img) img.src = imgSrc;
+    if (caption) caption.textContent = captionText || 'Customer Testimonial | INSURANCE ADDA';
+  }
+
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+window.openTestimonialLightbox = openTestimonialLightbox;
