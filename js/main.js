@@ -286,12 +286,13 @@ function initServicesSlider() {
       }
 
       if (isHealthCard) {
-        const assistModal = document.getElementById('assistanceModal');
-        const serviceSelect = document.getElementById('modalInsuranceService');
+        const enquiryCard = document.querySelector('.enquiry-form-card');
+        const serviceSelect = document.getElementById('homeInsuranceService');
         if (serviceSelect) serviceSelect.value = 'Health Insurance';
-        if (assistModal) {
-          assistModal.classList.add('open');
-          document.body.style.overflow = 'hidden';
+        if (enquiryCard) {
+          enquiryCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          const firstInput = enquiryCard.querySelector('input[name="fullName"]');
+          if (firstInput) firstInput.focus();
         }
         return;
       }
@@ -585,15 +586,19 @@ window.openTestimonialLightbox = openTestimonialLightbox;
 
 /**
  * 10. Direct "Get Assistance" Smooth Navigation to Form (No Modal)
+ * Ensures homepage ALWAYS starts at the very top (Hero section) on initial page load.
+ * Scrolls to the Request Personalised Assistance form ONLY when customer clicks the button.
  */
 function initGetAssistanceNavigation() {
   const btn = document.getElementById('navGetAssistanceBtn');
   if (btn) {
     btn.addEventListener('click', (e) => {
-      const contactSection = document.getElementById('contact');
-      if (contactSection) {
-        e.preventDefault();
-        const formCard = contactSection.querySelector('.enquiry-form-card') || contactSection;
+      e.preventDefault();
+      const formCard = document.querySelector('.enquiry-form-card');
+      const contactForm = document.getElementById('contactPageForm');
+      
+      if (formCard) {
+        // On homepage: smooth scroll directly to the form
         formCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
         setTimeout(() => {
           const firstInput = formCard.querySelector('input[name="fullName"]');
@@ -606,12 +611,30 @@ function initGetAssistanceNavigation() {
             formCard.style.boxShadow = '';
           }, 1800);
         }, 450);
+      } else if (contactForm) {
+        // On contact page: smooth scroll to form
+        contactForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        setTimeout(() => {
+          const firstInput = contactForm.querySelector('input[name="fullName"]');
+          if (firstInput) firstInput.focus();
+        }, 450);
+      } else {
+        // On another page (e.g. testimonials): store flag and go to homepage
+        sessionStorage.setItem('openAssistanceForm', 'true');
+        window.location.href = 'index.html';
       }
     });
   }
 
-  // Handle cross-page arrival with hash
-  if (window.location.hash === '#contact' || window.location.hash === '#contactPageForm') {
+  // Clear any legacy hash from URL so reloads NEVER anchor-jump down
+  if (window.location.hash === '#contact' || window.location.hash === '#contactPageForm' || window.location.hash === '#enquiry') {
+    history.replaceState(null, document.title, window.location.pathname + window.location.search);
+    window.scrollTo(0, 0);
+  }
+
+  // ONLY scroll down if customer specifically clicked "Get Assistance" on another page
+  if (sessionStorage.getItem('openAssistanceForm') === 'true') {
+    sessionStorage.removeItem('openAssistanceForm');
     setTimeout(() => {
       const formCard = document.querySelector('.enquiry-form-card');
       if (formCard) {
@@ -619,6 +642,11 @@ function initGetAssistanceNavigation() {
         const firstInput = formCard.querySelector('input[name="fullName"]');
         if (firstInput) firstInput.focus();
       }
-    }, 400);
+    }, 450);
+  } else {
+    // Normal visit/load: guarantee the page starts at the very top (Hero section)
+    if (!window.location.hash) {
+      window.scrollTo(0, 0);
+    }
   }
 }
