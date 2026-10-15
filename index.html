@@ -17,9 +17,9 @@
   <link rel="icon" type="image/jpeg" href="assets/images/insurance-adda-logo.jpg">
 
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="css/style.css?v=3.0">
-  <link rel="stylesheet" href="css/components.css?v=3.0">
-  <link rel="stylesheet" href="css/responsive.css?v=3.0">
+  <link rel="stylesheet" href="css/style.css?v=3.1">
+  <link rel="stylesheet" href="css/components.css?v=3.1">
+  <link rel="stylesheet" href="css/responsive.css?v=3.1">
 </head>
 <body>
 
@@ -46,9 +46,9 @@
       </nav>
 
       <div class="nav-actions">
-        <button class="btn btn-gold btn-sm" data-open-modal="assistanceModal" aria-haspopup="dialog" id="navGetAssistanceBtn">
+        <a href="#contact" class="btn btn-gold btn-sm" id="navGetAssistanceBtn">
           Get Assistance
-        </button>
+        </a>
         <button class="mobile-nav-toggle" aria-label="Toggle navigation menu" id="mobileMenuToggle">
           <span></span>
           <span></span>
@@ -1087,14 +1087,10 @@
               Privacy Notice: Your information will be used solely by INSURANCE ADDA to respond to your insurance enquiry. We do not sell or spam your contact details.
             </p>
 
-            <div class="form-actions">
-              <button type="submit" class="btn btn-gold" id="homeSubmitBtn">
-                Submit Insurance Enquiry &rarr;
-              </button>
-
-              <button type="button" class="btn btn-outline-navy btn-submit-via-whatsapp" id="homeDirectWaBtn">
-                <svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:currentColor;"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-                Send Directly via WhatsApp
+            <div class="form-actions" style="margin-top: 1.25rem;">
+              <button type="submit" class="btn btn-whatsapp btn-lg btn-submit-via-whatsapp" id="homeDirectWaBtn" style="width: 100%; justify-content: center; font-size: 1.05rem; gap: 10px; padding: 0.95rem 1.5rem;">
+                <svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:currentColor;"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                Send Request via WhatsApp Instantly &rarr;
               </button>
             </div>
           </form>
@@ -1150,63 +1146,7 @@
     </button>
   </div>
 
-  <!-- ==========================================================================
-       MODAL: GET ASSISTANCE POPUP
-       ========================================================================== -->
-  <div class="modal-backdrop" id="assistanceModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-    <div class="modal-container">
-      <button class="modal-close-btn" data-close-modal aria-label="Close dialog">&times;</button>
-      <div style="padding: 2.25rem 2rem;">
-        <div class="eyebrow-badge">
-          QUICK CONSULTATION
-        </div>
-        <h3 id="modalTitle" style="margin-bottom: 0.5rem;">Get Insurance Assistance</h3>
-        <p style="font-size: 0.95rem; margin-bottom: 1.5rem;">
-          Connect with Ravi Kumar G.R. for prompt guidance tailored to your specific requirements.
-        </p>
 
-        <div class="form-alert-container"></div>
-
-        <form class="insurance-enquiry-form" novalidate id="modalEnquiryForm">
-          <div class="form-group">
-            <label class="form-label" for="modalFullName">Your Name <span class="req">*</span></label>
-            <input type="text" id="modalFullName" name="fullName" class="form-control" placeholder="Full Name" required>
-            <div class="form-error-msg"></div>
-          </div>
-
-          <div class="form-group">
-            <label class="form-label" for="modalMobileNumber">Mobile Number <span class="req">*</span></label>
-            <input type="tel" id="modalMobileNumber" name="mobileNumber" class="form-control" placeholder="10-digit mobile number" maxlength="10" required>
-            <div class="form-error-msg"></div>
-          </div>
-
-          <div class="form-group">
-            <label class="form-label" for="modalInsuranceService">Service Required <span class="req">*</span></label>
-            <select id="modalInsuranceService" name="insuranceService" class="form-control" required>
-              <option value="">-- Select Insurance Service --</option>
-              <option value="Life Insurance">Life Insurance</option>
-              <option value="Term Insurance">Term Insurance</option>
-              <option value="Health Insurance">Health Insurance</option>
-              <option value="Vehicle Insurance">Vehicle Insurance</option>
-              <option value="Travel Insurance">Travel Insurance</option>
-              <option value="Shop & Business Insurance">Shop & Business Insurance</option>
-              <option value="General Enquiry">General Enquiry</option>
-            </select>
-            <div class="form-error-msg"></div>
-          </div>
-
-          <div class="form-actions" style="margin-top: 1.5rem;">
-            <button type="submit" class="btn btn-gold">
-              Submit Request &rarr;
-            </button>
-            <button type="button" class="btn btn-whatsapp btn-submit-via-whatsapp">
-              Connect on WhatsApp Instantly
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
 
   <!-- ==========================================================================
        14 & 15. FOOTER & LEGAL DISCLAIMER
@@ -1318,9 +1258,9 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="js/main.js?v=3.0"></script>
-  <script src="js/whatsapp.js?v=3.0"></script>
-  <script src="js/enquiry.js?v=3.0"></script>
+  <script src="js/main.js?v=3.1"></script>
+  <script src="js/whatsapp.js?v=3.1"></script>
+  <script src="js/enquiry.js?v=3.1"></script>
   <script>
     // Fast Animated Counters Runner (Guaranteed to execute on local test)
     (function() {

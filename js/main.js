@@ -6,6 +6,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   initStickyHeader();
   initMobileNavigation();
+  initGetAssistanceNavigation();
   initModals();
   initDynamicYear();
   initScrollAnimations();
@@ -581,3 +582,43 @@ function openTestimonialLightbox(imgSrc, captionText) {
   document.body.style.overflow = 'hidden';
 }
 window.openTestimonialLightbox = openTestimonialLightbox;
+
+/**
+ * 10. Direct "Get Assistance" Smooth Navigation to Form (No Modal)
+ */
+function initGetAssistanceNavigation() {
+  const btn = document.getElementById('navGetAssistanceBtn');
+  if (btn) {
+    btn.addEventListener('click', (e) => {
+      const contactSection = document.getElementById('contact');
+      if (contactSection) {
+        e.preventDefault();
+        const formCard = contactSection.querySelector('.enquiry-form-card') || contactSection;
+        formCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        setTimeout(() => {
+          const firstInput = formCard.querySelector('input[name="fullName"]');
+          if (firstInput) {
+            firstInput.focus();
+          }
+          formCard.style.transition = 'box-shadow 0.4s ease';
+          formCard.style.boxShadow = '0 0 0 4px rgba(200, 164, 93, 0.45), 0 20px 45px rgba(11, 23, 48, 0.2)';
+          setTimeout(() => {
+            formCard.style.boxShadow = '';
+          }, 1800);
+        }, 450);
+      }
+    });
+  }
+
+  // Handle cross-page arrival with hash
+  if (window.location.hash === '#contact' || window.location.hash === '#contactPageForm') {
+    setTimeout(() => {
+      const formCard = document.querySelector('.enquiry-form-card');
+      if (formCard) {
+        formCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        const firstInput = formCard.querySelector('input[name="fullName"]');
+        if (firstInput) firstInput.focus();
+      }
+    }, 400);
+  }
+}

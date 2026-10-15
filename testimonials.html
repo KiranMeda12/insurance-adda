@@ -8,9 +8,9 @@
   <link rel="icon" type="image/jpeg" href="assets/images/insurance-adda-logo.jpg">
 
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="css/style.css?v=3.0">
-  <link rel="stylesheet" href="css/components.css?v=3.0">
-  <link rel="stylesheet" href="css/responsive.css?v=3.0">
+  <link rel="stylesheet" href="css/style.css?v=3.1">
+  <link rel="stylesheet" href="css/components.css?v=3.1">
+  <link rel="stylesheet" href="css/responsive.css?v=3.1">
 </head>
 <body>
 
@@ -34,9 +34,9 @@
       </nav>
 
       <div class="nav-actions">
-        <button class="btn btn-gold btn-sm" data-open-modal="assistanceModal" id="navGetAssistanceBtn">
+        <a href="index.html#contact" class="btn btn-gold btn-sm" id="navGetAssistanceBtn">
           Get Assistance
-        </button>
+        </a>
         <button class="mobile-nav-toggle" aria-label="Toggle navigation menu" id="mobileMenuToggle">
           <span></span>
           <span></span>
@@ -363,50 +363,7 @@
     </button>
   </div>
 
-  <!-- MODAL: GET ASSISTANCE -->
-  <div class="modal-backdrop" id="assistanceModal" role="dialog" aria-modal="true">
-    <div class="modal-container">
-      <button class="modal-close-btn" data-close-modal aria-label="Close dialog">&times;</button>
-      <div style="padding: 2.25rem 2rem;">
-        <div class="eyebrow-badge">QUICK CONSULTATION</div>
-        <h3 style="margin-bottom: 0.5rem;">Get Insurance Assistance</h3>
-        <p style="font-size: 0.95rem; margin-bottom: 1.5rem;">
-          Connect with Ravi Kumar G.R. for prompt guidance tailored to your specific requirements.
-        </p>
-        <div class="form-alert-container"></div>
-        <form class="insurance-enquiry-form" novalidate>
-          <div class="form-group">
-            <label class="form-label" for="tModalFullName">Your Name <span class="req">*</span></label>
-            <input type="text" id="tModalFullName" name="fullName" class="form-control" placeholder="Full Name" required>
-            <div class="form-error-msg"></div>
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="tModalMobileNumber">Mobile Number <span class="req">*</span></label>
-            <input type="tel" id="tModalMobileNumber" name="mobileNumber" class="form-control" placeholder="10-digit mobile number" maxlength="10" required>
-            <div class="form-error-msg"></div>
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="tModalInsuranceService">Service Required <span class="req">*</span></label>
-            <select id="tModalInsuranceService" name="insuranceService" class="form-control" required>
-              <option value="">-- Select Insurance Service --</option>
-              <option value="Life Insurance">Life Insurance</option>
-              <option value="Term Insurance">Term Insurance</option>
-              <option value="Health Insurance">Health Insurance</option>
-              <option value="Vehicle Insurance">Vehicle Insurance</option>
-              <option value="Travel Insurance">Travel Insurance</option>
-              <option value="Shop & Business Insurance">Shop & Business Insurance</option>
-              <option value="General Enquiry">General Enquiry</option>
-            </select>
-            <div class="form-error-msg"></div>
-          </div>
-          <div class="form-actions" style="margin-top: 1.5rem;">
-            <button type="submit" class="btn btn-gold">Submit Request &rarr;</button>
-            <button type="button" class="btn btn-whatsapp btn-submit-via-whatsapp">Connect on WhatsApp Instantly</button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
+
 
   <!-- FOOTER -->
   <footer class="site-footer">
@@ -517,9 +474,9 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="js/main.js?v=3.0"></script>
-  <script src="js/whatsapp.js?v=3.0"></script>
-  <script src="js/enquiry.js?v=3.0"></script>
+  <script src="js/main.js?v=3.1"></script>
+  <script src="js/whatsapp.js?v=3.1"></script>
+  <script src="js/enquiry.js?v=3.1"></script>
   <script>
     // Testimonials Filtering Logic for Poster Cards
     document.addEventListener('DOMContentLoaded', () => {

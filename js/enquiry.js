@@ -22,13 +22,13 @@ function initEnquiryForms() {
       });
     });
 
-    // Form Submission Event
-    form.addEventListener('submit', async (e) => {
+    // Form Submission Event - directly routes through WhatsApp
+    form.addEventListener('submit', (e) => {
       e.preventDefault();
-      await handleFormSubmit(form);
+      sendFormToWhatsApp(form);
     });
 
-    // Direct WhatsApp Button within form
+    // Direct WhatsApp Button click within form
     const directWaBtn = form.querySelector('.btn-submit-via-whatsapp');
     if (directWaBtn) {
       directWaBtn.addEventListener('click', (e) => {
