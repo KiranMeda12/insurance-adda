@@ -83,6 +83,9 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -90,8 +93,11 @@ body {
   color: var(--color-text-main);
   background-color: var(--color-ivory);
   line-height: 1.65;
+  width: 100%;
+  max-width: 100%;
   overflow-x: hidden;
   position: relative;
+  -webkit-text-size-adjust: 100%;
 }
 
 img, picture, svg {
@@ -172,18 +178,23 @@ p {
 .eyebrow-badge {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
-  padding: 6px 16px;
+  padding: 6px 14px;
   border-radius: var(--radius-full);
   background: rgba(200, 164, 93, 0.12);
   border: 1px solid rgba(200, 164, 93, 0.4);
   color: var(--color-gold-dark);
   font-family: var(--font-sans);
-  font-size: 0.78rem;
+  font-size: 0.76rem;
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   margin-bottom: 1.25rem;
+  max-width: 100%;
+  box-sizing: border-box;
+  white-space: normal;
+  text-align: center;
 }
 
 .eyebrow-badge.badge-dark {
