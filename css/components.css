@@ -2198,25 +2198,31 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 0.65rem 1.3rem;
-  background: #FFFFFF;
-  border: 1.5px solid rgba(200, 164, 93, 0.3);
+  padding: 0.65rem 1.35rem;
+  background: #FFFFFF !important;
+  border: 1.5px solid rgba(200, 164, 93, 0.45);
   border-radius: var(--radius-full);
-  color: var(--color-navy);
-  font-size: 0.92rem;
-  font-weight: 600;
+  color: #0B1730 !important;
+  font-size: 0.94rem;
+  font-weight: 700;
   text-decoration: none;
   transition: all var(--transition-fast);
-  box-shadow: 0 4px 12px rgba(11, 23, 48, 0.04);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+  white-space: nowrap;
+}
+
+.cat-nav-pill span {
+  font-size: 1.15rem;
+  line-height: 1;
 }
 
 .cat-nav-pill:hover,
 .cat-nav-pill.active {
-  background: var(--color-midnight);
-  color: var(--color-gold-light);
-  border-color: var(--color-gold);
+  background: #0B1730 !important;
+  color: #DFBE7A !important;
+  border-color: #C8A45D;
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(11, 23, 48, 0.16);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
 }
 
 .achievement-section-block {
