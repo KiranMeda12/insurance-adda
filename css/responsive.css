@@ -266,9 +266,194 @@
   .services-grid,
   .why-grid,
   .testimonials-grid,
-  .values-grid {
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
+  .values-grid,
+  .contact-layout-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Contact / Enquiry Section Responsive Fixes */
+  #enquiry {
+    overflow: hidden !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+  }
+
+  .contact-info-cards {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .contact-info-cards h2 {
+    font-size: clamp(1.5rem, 6.2vw, 2rem) !important;
+    line-height: 1.25 !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+
+  .contact-info-cards p {
+    font-size: 0.92rem !important;
+    line-height: 1.6 !important;
+    word-break: break-word !important;
+  }
+
+  .contact-card-item {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    padding: 1.15rem 1rem !important;
+    gap: 12px !important;
+  }
+
+  .contact-card-item:hover {
+    transform: none !important;
+  }
+
+  .contact-card-icon {
+    width: 42px !important;
+    height: 42px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .contact-card-icon svg {
+    width: 20px !important;
+    height: 20px !important;
+  }
+
+  .contact-card-body {
+    min-width: 0 !important;
+    width: 100% !important;
+    overflow: hidden !important;
+    word-break: break-word !important;
+  }
+
+  .contact-card-body h4 {
+    font-size: 0.98rem !important;
+    margin-bottom: 3px !important;
+  }
+
+  .contact-card-body p {
+    font-size: 0.85rem !important;
+    margin-bottom: 0.6rem !important;
+  }
+
+  .contact-link-row {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 8px !important;
+    width: 100% !important;
+  }
+
+  .contact-link-pill {
+    width: 100% !important;
+    max-width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 7px 10px !important;
+    font-size: 0.82rem !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+    box-sizing: border-box !important;
+  }
+
+  .enquiry-form-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    padding: 1.5rem 1rem !important;
+    border-radius: var(--radius-lg) !important;
+    overflow: hidden !important;
+  }
+
+  .form-header h3 {
+    font-size: 1.35rem !important;
+    line-height: 1.25 !important;
+    word-break: break-word !important;
+  }
+
+  .form-header p {
+    font-size: 0.88rem !important;
+    line-height: 1.5 !important;
+    word-break: break-word !important;
+  }
+
+  .form-row-2 {
+    grid-template-columns: 1fr !important;
+    gap: 0.9rem !important;
+    width: 100% !important;
+  }
+
+  .form-group {
+    margin-bottom: 1.1rem !important;
+    width: 100% !important;
+  }
+
+  .form-control {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    font-size: 0.9rem !important;
+    padding: 0.75rem 0.95rem !important;
+  }
+
+  .radio-pill-group {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 6px !important;
+    width: 100% !important;
+  }
+
+  .radio-pill-label {
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 0.5rem 0.25rem !important;
+    font-size: 0.78rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .form-privacy-notice {
+    font-size: 0.74rem !important;
+    line-height: 1.45 !important;
+    word-break: break-word !important;
+    margin: 1rem 0 !important;
+  }
+
+  .btn-submit-via-whatsapp {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+    font-size: 0.92rem !important;
+    line-height: 1.35 !important;
+    padding: 0.85rem 1rem !important;
+    text-align: center !important;
+    justify-content: center !important;
+  }
+
+  .contact-profile-card {
+    padding: 1.5rem 1rem !important;
+    border-radius: var(--radius-lg) !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+
+  .contact-profile-card .btn {
+    font-size: 0.85rem !important;
+    padding: 0.75rem 0.85rem !important;
+    word-break: break-all !important;
+    white-space: normal !important;
   }
 
   .footer-top-grid {
@@ -276,19 +461,14 @@
     gap: 2rem;
   }
 
-  .form-row-2 {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
-  .enquiry-form-card {
-    padding: 1.75rem 1.25rem;
-  }
-
   .btn:not(.nav-actions .btn):not(#navGetAssistanceBtn):not(.chip-btn):not(.poster-tab-btn) {
     width: 100%;
-    padding: 0.85rem 1.25rem;
+    padding: 0.85rem 1rem;
     font-size: 0.95rem;
+    white-space: normal !important;
+    word-break: break-word !important;
+    box-sizing: border-box !important;
+    max-width: 100% !important;
   }
 
   .hero-cta-group {
@@ -399,5 +579,9 @@
   .mobile-nav-toggle {
     width: 24px;
     height: 20px;
+  }
+
+  .radio-pill-group {
+    grid-template-columns: 1fr !important;
   }
 }
