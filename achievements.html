@@ -12,27 +12,6 @@
   <link rel="stylesheet" href="css/components.css?v=4.6">
   <link rel="stylesheet" href="css/responsive.css?v=4.6">
 
-  <!-- Direct High-Contrast Category Navigation Styles -->
-  <style>
-    .achievements-cat-nav .cat-nav-pill {
-      display: inline-flex !important;
-      align-items: center !important;
-      gap: 8px !important;
-      background-color: #FFFFFF !important;
-      color: #0B1730 !important;
-      border: 1.5px solid #C8A45D !important;
-      font-weight: 700 !important;
-      text-decoration: none !important;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25) !important;
-    }
-    .achievements-cat-nav .cat-nav-pill:hover,
-    .achievements-cat-nav .cat-nav-pill.active {
-      background-color: #0B1730 !important;
-      color: #DFBE7A !important;
-      border-color: #DFBE7A !important;
-      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.45) !important;
-    }
-  </style>
 </head>
 <body>
 
@@ -176,37 +155,9 @@
     </div>
   </aside>
 
-  <!-- ACHIEVEMENTS PAGE HERO -->
-  <section class="section-padding-sm bg-midnight" style="border-bottom: 1px solid var(--color-navy-border); text-align: center;">
-    <div class="container" style="max-width: 860px;">
-      <div class="eyebrow-badge badge-dark">
-        PROVEN TRACK RECORD & CREDIBILITY
-      </div>
-      <h1 class="text-white" style="margin-bottom: 1.25rem;">Milestones of Dedicated Protection</h1>
-      <p class="text-muted-dark" style="font-size: 1.12rem; line-height: 1.8; margin-bottom: 2rem;">
-        Over 15 years of helping families across India protect what matters most through transparent, customer-first insurance planning. Browse our gallery of awards, honorary gifts, career milestones, and certifications.
-      </p>
-
-      <!-- Quick Category Jump Navigation -->
-      <div class="achievements-cat-nav" style="margin-bottom: 0;">
-        <a href="#awards-trophies" class="cat-nav-pill">
-          <span>🏆</span> Awards & Trophies
-        </a>
-        <a href="#achievements-gifts" class="cat-nav-pill">
-          <span>🎁</span> Achievements Gifts
-        </a>
-        <a href="#professional-milestones" class="cat-nav-pill">
-          <span>🌟</span> Professional Milestones
-        </a>
-        <a href="#certificates" class="cat-nav-pill">
-          <span>📜</span> Certificates
-        </a>
-      </div>
-    </div>
-  </section>
-
   <!-- ACHIEVEMENTS CONTENT BODY -->
-  <main class="section-padding bg-ivory">
+  <main class="section-padding bg-ivory" style="padding-top: 2.5rem;">
+    <h1 class="sr-only">Honours, Awards &amp; Milestones — Ravi Kumar G.R. | INSURANCE ADDA</h1>
     <div class="container">
 
       <!-- 3 Core Metric Counter Cards -->
@@ -958,28 +909,8 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="js/main.js?v=4.5"></script>
-  <script src="js/whatsapp.js?v=4.5"></script>
-  <script src="js/enquiry.js?v=4.5"></script>
-  <script>
-    // Smooth scrolling & active highlight for achievements category pills
-    document.addEventListener('DOMContentLoaded', () => {
-      const pills = document.querySelectorAll('.cat-nav-pill');
-      pills.forEach(pill => {
-        pill.addEventListener('click', (e) => {
-          const targetId = pill.getAttribute('href');
-          if (targetId && targetId.startsWith('#')) {
-            const targetEl = document.querySelector(targetId);
-            if (targetEl) {
-              e.preventDefault();
-              pills.forEach(p => p.classList.remove('active'));
-              pill.classList.add('active');
-              targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-          }
-        });
-      });
-    });
-  </script>
+  <script src="js/main.js?v=4.6"></script>
+  <script src="js/whatsapp.js?v=4.6"></script>
+  <script src="js/enquiry.js?v=4.6"></script>
 </body>
 </html>
