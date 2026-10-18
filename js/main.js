@@ -602,6 +602,14 @@ function openTestimonialLightbox(imgSrc, captionText) {
 window.openTestimonialLightbox = openTestimonialLightbox;
 
 /**
+ * Open Achievement Photo in Lightbox Modal
+ */
+function openAchievementLightbox(imgSrc, captionText) {
+  openTestimonialLightbox(imgSrc, captionText || 'Achievement & Recognition | INSURANCE ADDA');
+}
+window.openAchievementLightbox = openAchievementLightbox;
+
+/**
  * 10. Direct "Get Assistance" Smooth Navigation to Form (No Modal)
  * Ensures homepage ALWAYS starts at the very top (Hero section) on initial page load.
  * Scrolls to the Request Personalised Assistance form ONLY when customer clicks the button.
