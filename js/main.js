@@ -41,7 +41,8 @@ function initMobileNavigation() {
   const toggleBtn = document.querySelector('.mobile-nav-toggle');
   const drawer = document.querySelector('.mobile-drawer');
   const overlay = document.querySelector('.mobile-drawer-overlay');
-  const drawerLinks = document.querySelectorAll('.mobile-drawer-link');
+  const closeBtn = document.getElementById('mobileDrawerClose');
+  const drawerLinks = document.querySelectorAll('.mobile-drawer-link, .mobile-nav-item');
 
   if (!toggleBtn || !drawer || !overlay) return;
 
@@ -67,10 +68,26 @@ function initMobileNavigation() {
     }
   });
 
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeDrawer);
+  }
+
   overlay.addEventListener('click', closeDrawer);
 
   drawerLinks.forEach(link => {
-    link.addEventListener('click', closeDrawer);
+    link.addEventListener('click', (e) => {
+      closeDrawer();
+      const href = link.getAttribute('href');
+      if (href && href.startsWith('#')) {
+        e.preventDefault();
+        const targetEl = document.querySelector(href);
+        if (targetEl) {
+          setTimeout(() => {
+            targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }, 220);
+        }
+      }
+    });
   });
 }
 
