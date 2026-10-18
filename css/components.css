@@ -2388,7 +2388,7 @@
   position: absolute;
   bottom: 78px;
   right: 0;
-  width: 320px;
+  width: 330px;
   background: #FFFFFF;
   border-radius: var(--radius-lg);
   box-shadow: 0 18px 45px rgba(11, 23, 48, 0.28);
@@ -2398,6 +2398,7 @@
   visibility: hidden;
   transform: translateY(15px) scale(0.95);
   transition: all var(--transition-smooth);
+  z-index: 1000;
 }
 
 .whatsapp-popover.open {
@@ -2409,24 +2410,24 @@
 .wa-popover-header {
   background: var(--color-midnight);
   color: #FFFFFF;
-  padding: 1.25rem 1.5rem;
+  padding: 1.15rem 1.35rem;
   border-bottom: 2px solid var(--color-gold);
 }
 
 .wa-popover-header h4 {
   font-family: var(--font-serif);
-  font-size: 1.15rem;
+  font-size: 1.12rem;
   color: #FFFFFF;
-  margin-bottom: 4px;
+  margin-bottom: 3px;
 }
 
 .wa-popover-header p {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   color: var(--color-gold-light);
 }
 
 .wa-popover-body {
-  padding: 1.25rem;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   gap: 0.85rem;
@@ -2434,51 +2435,100 @@
 
 .wa-contact-option {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.95rem 1.15rem;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 0.95rem 1.05rem;
   background: #F8FAFC;
   border: 1px solid rgba(24, 59, 105, 0.12);
   border-radius: var(--radius-md);
-  text-decoration: none;
   transition: all var(--transition-fast);
 }
 
 .wa-contact-option:hover {
-  background: #ECFDF5;
-  border-color: #25D366;
-  transform: translateY(-2px);
+  background: #FFFFFF;
+  border-color: rgba(200, 164, 93, 0.45);
+  box-shadow: 0 6px 18px rgba(11, 23, 48, 0.08);
+}
+
+.wa-opt-info {
+  display: flex;
+  flex-direction: column;
 }
 
 .wa-opt-info strong {
-  display: block;
-  font-size: 0.92rem;
+  font-size: 0.94rem;
   color: var(--color-midnight);
+  font-weight: 700;
+  line-height: 1.25;
 }
 
 .wa-opt-info span {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   color: var(--color-text-muted);
+  margin-top: 2px;
 }
 
-.wa-opt-btn {
-  display: flex;
+.wa-opt-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.55rem;
+}
+
+.wa-action-btn {
+  display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 6px;
-  background: #25D366;
-  color: #FFFFFF;
+  padding: 0.52rem 0.65rem;
+  border-radius: var(--radius-full);
   font-size: 0.78rem;
   font-weight: 700;
-  padding: 6px 12px;
-  border-radius: var(--radius-full);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.wa-action-btn svg {
+  flex-shrink: 0;
+}
+
+/* Call Button: Sleek midnight navy with gold border */
+.wa-btn-call {
+  background: #0B1730;
+  color: #FFFFFF;
+  border: 1px solid rgba(200, 164, 93, 0.45);
+}
+
+.wa-btn-call:hover {
+  background: #183B69;
+  color: #DFBE7A;
+  border-color: var(--color-gold);
+  transform: translateY(-1.5px);
+  box-shadow: 0 4px 12px rgba(11, 23, 48, 0.25);
+}
+
+/* Chat Button: WhatsApp brand green */
+.wa-btn-chat {
+  background: #25D366;
+  color: #FFFFFF;
+  border: 1px solid #1EBE5D;
+}
+
+.wa-btn-chat:hover {
+  background: #1EBE5D;
+  color: #FFFFFF;
+  transform: translateY(-1.5px);
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.35);
 }
 
 .wa-popover-footer {
-  padding: 0.75rem 1.25rem;
+  padding: 0.65rem 1.25rem;
   background: #F1F5F9;
   text-align: center;
-  font-size: 0.76rem;
+  font-size: 0.75rem;
   color: var(--color-text-muted);
+  border-top: 1px solid rgba(24, 59, 105, 0.08);
 }
 
 /* ==========================================================================

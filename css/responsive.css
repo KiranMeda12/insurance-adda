@@ -341,6 +341,15 @@
     bottom: 68px;
   }
 
+  .wa-opt-actions {
+    gap: 0.5rem;
+  }
+
+  .wa-action-btn {
+    padding: 0.48rem 0.4rem !important;
+    font-size: 0.74rem !important;
+  }
+
   .footer-bottom-bar {
     flex-direction: column;
     text-align: center;
