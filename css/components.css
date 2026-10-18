@@ -1694,9 +1694,12 @@
 
 .achievements-metrics-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   margin-bottom: 2.75rem;
+  max-width: 1080px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .achievement-metric-card {
@@ -1857,9 +1860,6 @@
 }
 
 @media (max-width: 992px) {
-  .achievements-metrics-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
   .achievements-banner {
     flex-direction: column;
     align-items: flex-start;
@@ -1870,12 +1870,16 @@
   }
 }
 
-@media (max-width: 580px) {
+@media (max-width: 860px) {
   .achievements-metrics-grid {
     grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .achievement-metric-card {
+    padding: 1.85rem 1.4rem;
   }
   .metric-num {
-    font-size: 2.2rem;
+    font-size: 2.35rem;
   }
 }
 
